@@ -42,7 +42,7 @@ class Api {
     }).then(this._checkResponse)
   }
 
-  giveCard(name, link) {
+  createCard(name, link) {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
       headers: {

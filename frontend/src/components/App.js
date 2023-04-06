@@ -178,9 +178,9 @@ function App() {
   }
 
   function handleAddCrad({values, resetForm}, setButtonLoading){
-    api.giveCard(values.cardDescription, values.linkImg)
+    api.createCard(values.cardDescription, values.linkImg)
       .then(newCard => {
-        setCurrentCards([newCard, ...currentCards]);
+        setCurrentCards([...currentCards, newCard]);
         closeAllPopups();
         resetForm();
       })
