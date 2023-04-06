@@ -116,7 +116,7 @@ function App() {
       getContent(jwt)
         .then((res) => {
           setLoggedIn(true);
-          setUserEmail(res.data.email);
+          setUserEmail(res.email);
           navigate("/", {replace: true});
         })
         .catch((err) => {
@@ -154,6 +154,7 @@ function App() {
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api.changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
+        console.log(newCard)
         setCurrentCards((state) => state.map((c) => c._id === card._id ? newCard : c));
       })
       .catch((err) => {

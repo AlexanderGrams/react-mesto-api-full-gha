@@ -4,15 +4,18 @@ const UnauthorizedError = require('../errors/UnauthorizedError');
 const { JWT_SECRET } = require('../config');
 
 const auth = (req, res, next) => {
-  const { jwt } = req.cookies;
+  const { authorization } = req.headers;
+  const bearer = 'Bearer ';
 
-  if (!jwt) {
+  if (!authorization || !authorization.startsWith(bearer)) {
     return next(new UnauthorizedError('Необходима авторизация'));
   }
 
+  const token = authorization.replace(bearer, '');
+
   let payload;
   try {
-    payload = jsonwebtoken.verify(jwt, JWT_SECRET);
+    payload = jsonwebtoken.verify(token, JWT_SECRET);
   } catch (err) {
     return next(new UnauthorizedError('Необходима авторизация'));
   }
