@@ -1,0 +1,8 @@
+.loading-btn {
+  width: 100%;
+  min-height: 50px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

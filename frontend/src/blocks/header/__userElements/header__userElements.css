@@ -1,0 +1,9 @@
+.header__userElements {
+  display: flex;
+}
+
+@media screen and (max-width: 561px) {
+  .header__userElements {
+    display: none;
+  }
+}

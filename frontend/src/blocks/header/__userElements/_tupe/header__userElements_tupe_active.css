@@ -1,0 +1,13 @@
+@media screen and (max-width: 561px){
+  .header__userElements_tupe_active{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid #545454;
+    padding-bottom: 40px;
+    bottom: 83px;
+    right: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+.authorization {
+  padding: 0;
+  margin: 60px auto 0 auto;
+  max-width: 358px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 934px) {
+  .authorization {
+    margin: 40px auto 0 auto;
+    width: calc(100% - 60px);
+  }
+}

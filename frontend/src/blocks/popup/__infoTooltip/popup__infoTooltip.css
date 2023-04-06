@@ -1,0 +1,11 @@
+.popup__infoTooltip {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 36px;
+}
+
+@media screen and (max-width: 500px) {
+  .popup__infoTooltip {
+    padding: 50px 18px;
+  }
+}

@@ -1,0 +1,23 @@
+.authorization__link {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+  color: #fff;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+  margin: 15px 0 0;
+  display: inline-block;
+}
+
+.authorization__link:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 500px) {
+  .authorization__link {
+    margin: 20px 0 0;
+  }
+}

@@ -1,0 +1,25 @@
+.authorization__item {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 3px 0 12px 0;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #fff;
+  transition: padding 0.15s ease,
+              box-shadow 0.3s ease,
+              border-radius 0.3s ease;
+}
+
+.authorization__item:focus-visible {
+  outline: none;
+  box-shadow: 0 0 2px 3px #71aaff;
+  border-bottom: 2px solid #000;
+  border-radius: 3px;
+  padding: 6px 0 9px 4px;
+}

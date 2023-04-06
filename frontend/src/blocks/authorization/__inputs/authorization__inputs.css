@@ -1,0 +1,12 @@
+.authorization__inputs {
+  margin: 50px 0 216px 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .authorization__inputs {
+    margin: 40px 0 173px 0;
+  }
+}

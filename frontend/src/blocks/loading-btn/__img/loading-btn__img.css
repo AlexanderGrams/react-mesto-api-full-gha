@@ -1,0 +1,6 @@
+.loading-btn__img {
+  display: block;
+  width: auto;
+  height: 35px;
+  object-fit: cover;
+}
