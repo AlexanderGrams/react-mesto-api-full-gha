@@ -124,13 +124,8 @@ const login = (req, res, next) => {
         throw next(new UnauthorizedError('Неправильные почта или пароль'));
       }))
     .then((user) => {
-      const jwt = jsonwebtoken.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
-      res.cookie('jwt', jwt, {
-        maxAge: 3600000 * 24 * 7,
-        httpOnly: true,
-        sameSite: true,
-      })
-        .send({ _id: user._id });
+      const token = jsonwebtoken.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
+      res.send({ _id: user._id, token });
     })
     .catch(next);
 };

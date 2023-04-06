@@ -15,6 +15,9 @@ function Card({onCardLike, onCardDelet, card, onCardClick}) {
   };
 
   const currentUserData = useContext(CurrentUserContext);
+  // console.log('test 1 ', currentUserData._id)
+  // console.log('test 2 ', card.owner._id)
+  // console.log('test 3 ', card)
   const isOwn = card.owner._id === currentUserData._id;
 
   const isLiked = card.likes.some(i => i._id === currentUserData._id);

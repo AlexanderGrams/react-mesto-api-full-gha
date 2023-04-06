@@ -24,7 +24,7 @@ function Main({onCardLike, onCardDelet, onEditProfile, onAddPlace, onEditAvatar,
       <section className="gallery" aria-label="Секция с картинками профиля">
         <ul className="gallery__cards">
           {
-            currentCardsData.map(card => {
+            currentCardsData.slice().reverse().map(card => {
               return (
                 <Card onCardLike={onCardLike} onCardDelet={onCardDelet} card={card} onCardClick={onCardClick} key={card._id}/>
               )

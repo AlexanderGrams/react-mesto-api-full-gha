@@ -6,4 +6,4 @@ export const validationConfig = {
   inputErrorClass: 'popup__item_type_error',
 };
 
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'http://localhost:3001';

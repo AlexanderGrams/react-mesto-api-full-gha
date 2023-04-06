@@ -21,7 +21,12 @@ const createCard = (req, res, next) => {
 
   // Создать новую крточку в базе данных
   Card.create({ name, link, owner })
-    .then((card) => res.status(201).send(card))
+    .then((card) => {
+      card
+        .populate('owner')
+        .then(() => res.status(201).send(card))
+        .catch(next);
+    })
     .catch((err) => {
       if (err.name === 'ValidationError') {
         return next(new InaccurateDataError('Переданы некорректные данные'));
@@ -66,6 +71,7 @@ function updateLikeCard(res, next, id, propertiesObj) {
     propertiesObj,
     { new: true },
   )
+    .populate(['owner', 'likes'])
     .then((card) => {
       if (!card) {
         throw next(new NotFoundError('Карточка не найдена'));
