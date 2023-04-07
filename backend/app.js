@@ -14,7 +14,7 @@ mongoose.connect(DB_ADDRESS, {
 });
 
 app.use(helmet());
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors());
 
 // Парсинг приходящих данных со стороны клиента
 app.use(express.urlencoded({ extended: true }));
