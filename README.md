@@ -4,12 +4,12 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://github.com/AlexanderGrams/react-mesto-api-full-gha
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 84.201.165.86
 
-Frontend https://...
+Frontend https://grams.nomoredomains.monster
 
-Backend https://...
+Backend https://api.grams.nomoredomains.monster/users
