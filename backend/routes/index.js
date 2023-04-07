@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { errors } = require('celebrate');
 
 const NotFoundError = require('../errors/NotFoundError');
-const { requestLogger, errorLogger } = require('../middlewares/logger');
+const { requestLogger, errorLogger } = require('../middlewares/Logger');
 const userRoutes = require('./users');
 const cardRoutes = require('./cards');
 const signinAndSignupRoutes = require('./signinAndSignup');
