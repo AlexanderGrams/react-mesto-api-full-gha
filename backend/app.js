@@ -2,9 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
+const { errors } = require('celebrate');
 
 const routes = require('./routes');
 const { PORT, DB_ADDRESS } = require('./config');
+const { requestLogger, errorLogger } = require('./middlewares/Logger');
+const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 
@@ -20,8 +23,17 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Сбор логов запросов
+app.use(requestLogger);
+
 // Роутинг
 app.use(routes);
+
+// Сбор логов ошибок
+app.use(errorLogger);
+
+app.use(errors());
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Сервер запустился!!! Работает на порту - ${PORT}`);
