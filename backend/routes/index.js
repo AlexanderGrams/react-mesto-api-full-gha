@@ -12,6 +12,12 @@ const errorHandler = require('../middlewares/errorHandler');
 // Сбор логов запросов
 router.use(requestLogger);
 
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 // Все доступные роуты страницы без авторизации
 router.use('/', signinAndSignupRoutes);
 
