@@ -1,7 +1,7 @@
 {
   "name": "mesto-react",
   "version": "0.1.0",
-  "homepage": "https://AlexanderGrams.github.io/react-mesto-auth",
+  "homepage": "http://grams.nomoredomains.monster/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
