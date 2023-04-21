@@ -97,6 +97,7 @@ Backend https://api.grams.nomoredomains.monster/users
 * [![Node][Node]][Node-url]
 * [![Mongodb][Mongodb]][Mongodb-url]
 * [![Express][Express]][Express-url]
+* [![Eslint][Eslint]][Eslint-url]
 
 <p align="right">(<a href="#readme-top">вернуться на верх</a>)</p>
 
@@ -254,3 +255,5 @@ Backend https://api.grams.nomoredomains.monster/users
 [Mongodb-url]: https://www.mongodb.com/
 [Express]: https://img.shields.io/badge/Express-20232A?style=for-the-badge&logo=Express&logoColor=ffffff
 [Express-url]: https://expressjs.com/ru/
+[Eslint]: https://img.shields.io/badge/eslint-20232A?style=for-the-badge&logo=eslint&logoColor=4B32C3
+[Eslint-url]: https://eslint.org/
