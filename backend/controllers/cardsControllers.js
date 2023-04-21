@@ -31,7 +31,7 @@ const createCard = (req, res, next) => {
       if (err.name === 'ValidationError') {
         return next(new InaccurateDataError('Переданы некорректные данные'));
       }
-      return (err);
+      return next(err);
     });
 };
 
@@ -47,10 +47,10 @@ const deleteCard = (req, res, next) => {
   Card.findById(cardId)
     .then((card) => {
       if (!card) {
-        throw next(new NotFoundError('Карточка не найдена'));
+        throw new NotFoundError('Карточка не найдена');
       }
       if (userId !== String(card.owner)) {
-        throw next(new ForbiddenError('Нет прав для удаления этой карточки'));
+        throw new ForbiddenError('Нет прав для удаления этой карточки');
       }
       return card.deleteOne();
     })
@@ -74,7 +74,7 @@ function updateLikeCard(res, next, id, propertiesObj) {
     .populate(['owner', 'likes'])
     .then((card) => {
       if (!card) {
-        throw next(new NotFoundError('Карточка не найдена'));
+        throw new NotFoundError('Карточка не найдена');
       }
       return res.send(card);
     })

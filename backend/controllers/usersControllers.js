@@ -19,7 +19,7 @@ function searchingUser(res, next, id) {
   return User.findById(id)
     .then((user) => {
       if (!(user)) {
-        throw next(new NotFoundError('Пользователь не найден'));
+        throw new NotFoundError('Пользователь не найден');
       }
       return res.send(user);
     })
@@ -81,7 +81,7 @@ function updateInfo(res, next, id, propertiesObj) {
   User.findByIdAndUpdate(id, propertiesObj, { new: true, runValidators: true })
     .then((user) => {
       if (!user) {
-        throw next(new NotFoundError('Пользователь не найден'));
+        throw new NotFoundError('Пользователь не найден');
       }
       return res.send(user);
     })
@@ -121,7 +121,7 @@ const login = (req, res, next) => {
         if (matched) {
           return user;
         }
-        throw next(new UnauthorizedError('Неправильные почта или пароль'));
+        throw new UnauthorizedError('Неправильные почта или пароль');
       }))
     .then((user) => {
       const token = jsonwebtoken.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
