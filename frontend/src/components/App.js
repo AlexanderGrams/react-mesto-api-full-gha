@@ -43,7 +43,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   //состояние регистрации
   const [message, setMessage] = useState({
-    status: false,
+    status: true,
     text: "",
   })
   //email авторизированного пользователя
